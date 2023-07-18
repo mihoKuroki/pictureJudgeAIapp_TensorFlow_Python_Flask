@@ -1,0 +1,55 @@
+###実行環境づくり###conda create -n python仮想環境名
+(base) C:\Users\miho0>conda create -n tf2
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: C:\Users\miho0\anaconda3\envs\tf2
+
+
+
+Proceed ([y]/n)? y
+
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use
+#
+#     $ conda activate tf2
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+
+
+
+###python仮想環境に入る
+(base) C:\Users\miho0>conda activate tf2
+(tf2) C:\Users\miho0>
+
+
+
+
+###tensorflowをインストールする
+(tf2) C:\Users\miho0>conda install tensorflow
+
+
+
+###tensorflowがインストールされているか確認する
+(tf2) C:\Users\miho0>python
+Python 3.10.12 | packaged by Anaconda, Inc. | (main, Jul  5 2023, 19:09:20) [MSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import tensorflow
+>>> exit()
+
+
+
+
+
+
+
+
+
