@@ -25,19 +25,19 @@ Executing transaction: done
 
 
 
-
+--------------------------------------------------------------------
 ###python仮想環境に入る
 (base) C:\Users\miho0>conda activate tf2
 (tf2) C:\Users\miho0>
 
 
 
-
+--------------------------------------------------------------------
 ###tensorflowをインストールする
 (tf2) C:\Users\miho0>conda install tensorflow
 
 
-
+--------------------------------------------------------------------
 ###tensorflowがインストールされているか確認する
 (tf2) C:\Users\miho0>python
 Python 3.10.12 | packaged by Anaconda, Inc. | (main, Jul  5 2023, 19:09:20) [MSC v.1916 64 bit (AMD64)] on win32
@@ -45,6 +45,43 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> import tensorflow
 >>> exit()
 
+
+--------------------------------------------------------------------
+
+###仮想環境を確認するコマンド
+(base) C:\Users\miho0>conda info -e
+# conda environments:
+#
+base                  *  C:\Users\miho0\anaconda3
+tf2                      C:\Users\miho0\anaconda3\envs\tf2
+
+
+(base) C:\Users\miho0>activate tf2
+
+
+
+
+--------------------------------------------------------------------
+###クローリングでデータ収集、ディープラーニング、分類まで
+###画像分類AI自作にチャレンジ
+データ収集・生成→データの前処理→モデルの定義→トレーニング（教師アリ学習）→テスト→評価
+
+
+--------------------------------------------------------------------
+###Python3のurllibライブラリを使用してFlickrから写真をダウンロード（クローリング）
+１Yahoo!アカウントを作成、Flickrログイン（aoyamamail）,FlickrのAPIキーを取得  
+
+Done! Here's the API key and secret for your new app:
+	AnimalClassifier
+Key:
+42730be8bfbd2576233e2eea7fa0806c
+
+Secret:
+bfa8822bca1bfcb5
+
+
+２ファイル一覧を取得
+３順にプログラムでダウンロード
 
 
 
