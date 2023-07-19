@@ -78,10 +78,65 @@ Key:
 
 Secret:
 bfa8822bca1bfcb5
+----------------------------------------------
+###flickrapiをインストールする
+(tf2) C:\Users\miho0>pip install flickrapi
+Collecting flickrapi
+
+###開発環境への移動
+###ディレクトリの内容確認
+(tf2) C:\Users\miho0\OneDrive\ドキュメント\GitHub
+\pictureJudgeAIapp_TensorFlow_Python_Flask\animalai>dir
+ ドライブ C のボリューム ラベルは Local Disk です
+ ボリューム シリアル番号は F236-0778 です
+
+ C:\Users\miho0\OneDrive\ドキュメント\GitHub\pictureJudgeAIapp_TensorFlow_Python_Flask\animalai のディレクトリ
+
+2023/07/19  23:32    <DIR>          .
+2023/07/19  23:30    <DIR>          ..
+2023/07/19  23:30    <DIR>          boar
+2023/07/19  23:30    <DIR>          crow
+2023/07/19  23:38               775 download.py
+2023/07/19  23:30    <DIR>          monkey
+               1 個のファイル                 775 バイト
+               5 個のディレクトリ  109,945,597,952 バイトの空き領域
 
 
-２ファイル一覧を取得
-３順にプログラムでダウンロード
+###ファイルを探す
+(tf2) C:\Users\miho0\OneDrive\ドキュメント\GitHub\pictureJudgeAIapp_TensorFlow_Python_Flask\animalai>python download.py monkey
+
+###ダウンロード　格納　python download.py 検索名
+
+(tf2) C:\Users\miho0\OneDrive\ドキュメント\GitHub\pictureJudgeAIapp_TensorFlow_Python_Flask\animalai>python download.py monkey
+{'page': 1,
+ 'pages': 1137,
+ 'perpage': 400,
+ 'photo': [{'farm': 1,
+            'height_q': 150,
+            'id': '18825272348',
+            'isfamily': 0,
+            'isfriend': 0,
+            'ispublic': 1,
+            'owner': '33909700@N02',
+            'secret': 'ae6b826494',
+            'server': '457',
+            'title': 'monkey',
+            'url_q': 'https://live.staticflickr.com/457/18825272348_ae6b826494_q.jpg',
+            'width_q': 150},
+           {'farm': 8,
+            'height_q': 150,
+            'id': '7161227411',
+            'isfamily': 0,
+            'isfriend': 0,
+            'ispublic': 1,
+------------------------------------------------------
+###PILLOWのインストール
+(tf2) C:\Users\miho0\OneDrive\ドキュメント\GitHub\pictureJudgeAIapp_TensorFlow_Python_Flask\animalai>pip install pillow
+Collecting pillow
+  Downloading Pillow-10.0.0-cp310-cp310-win_amd64.whl (2.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━ 2.5/2.5 MB 10.0 MB/s eta 0:00:00
+Installing collected packages: pillow
+Successfully installed pillow-10.0.0
 
 
 
