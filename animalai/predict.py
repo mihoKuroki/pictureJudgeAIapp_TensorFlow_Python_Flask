@@ -38,11 +38,10 @@ def build_model():
     model.compile(loss='categorical_crossentropy',optimizer=opt,metrics=['accuracy'])
 
     # モデルのロード
-    model = load_model('./animal_cnn_aug.h5')
+    model = load_model('./animal_cnn.h5')
 
     return model
 
-# メインの関数を定義する
 def main():
     image = Image.open(sys.argv[1])
     image = image.convert('RGB')

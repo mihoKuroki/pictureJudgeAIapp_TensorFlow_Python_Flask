@@ -6,13 +6,21 @@ from keras.utils import np_utils
 import keras
 import numpy as np
 
+from keras.optimizers import RMSprop
+from keras.callbacks import EarlyStopping
+from keras.callbacks import ModelCheckpoint
+
 classes = ["monkey","boar","crow"]
 num_classes = len(classes)
 image_size = 50
 
 # メインの関数を定義する
 def main():
-    X_train, X_test, y_train, y_test = np.load("./animal.npy")
+    X_train = np.load("./animal_X_train.npy")
+    X_test = np.load("./animal_X_test.npy")
+    y_train = np.load("./animal_y_train.npy")
+    y_test = np.load("./animal_y_test.npy")
+
     X_train = X_train.astype("float") / 256
     X_test = X_test.astype("float") / 256
     y_train = np_utils.to_categorical(y_train, num_classes)
@@ -20,7 +28,6 @@ def main():
 
     model = model_train(X_train, y_train)
     model_eval(model, X_test, y_test)
-
 
 # モデルを構築する関数を定義する
 def model_train(X, y):
@@ -46,13 +53,13 @@ def model_train(X, y):
     model.add(Dense(3))
     model.add(Activation('softmax'))
 
-    opt = keras.optimizers.rmsprop(lr=0.0001, decay=1e-6)
+    opt = keras.optimizers.RMSprop(lr=0.0001, decay=1e-6)
     model.compile(loss='categorical_crossentropy',optimizer=opt,metrics=['accuracy'])
     model.fit(X, y, batch_size=32, epochs=100)
 
     # モデルの保存
     model.save('./animal_cnn.h5')
-
+    
     return model
 
 # モデルを評価する関数を定義する

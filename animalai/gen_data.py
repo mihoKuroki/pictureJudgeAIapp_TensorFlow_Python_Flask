@@ -25,11 +25,26 @@ for index, classlabel in enumerate(classes):
         X.append(data)  #asarrayでNumPy配列に変換
         Y.append(index)  #ラベルを追加
         
-X = np.array(X, dtype=np.float32)  #NumPy配列に変換
-Y = np.array(Y, dtype=np.int32)
+X = np.array(X)  #NumPy配列に変換
+Y = np.array(Y)
 # pprint(Y)
 #学習データとテストデータを分ける
 X_train, X_test, y_train, y_test = model_selection.train_test_split(X, Y)
-xy = (X_train, X_test, y_train, y_test)
-# pprint(xy)
-np.save("./animal.npy", xy)  #NumPy配列をバイナリファイルに保存
+# xy = (X_train, X_test, y_train, y_test)
+# pprint(len(xy[0]))  #40
+# pprint(len(xy[1]))  #14
+# pprint(len(xy[2]))  #40
+# pprint(len(xy[3]))  #14
+# pprint(X_train.shape)
+# pprint(X_test.shape)
+# pprint(y_train.shape)
+# pprint(y_test.shape)
+
+np.save("./animal_X_train.npy", X_train)  #NumPy配列をバイナリファイルに保存
+np.save("./animal_X_test.npy", X_test)
+np.save("./animal_y_train.npy", y_train)
+np.save("./animal_y_test.npy", y_test)
+# X_train = np.save("./X_train.npy",allow_pickle=True)
+# X_test = np.save("./X_test.npy",allow_pickle=True)
+# y_train = np.save("./y_train.npy",allow_pickle=True)
+# y_test = np.save("./y_test.npy",allow_pickle=True)
