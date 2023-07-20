@@ -14,7 +14,7 @@ image_size = 50
 X = []  #画像データ
 Y = []  #ラベルデータ
 for index, classlabel in enumerate(classes):
-    photos_dir = "./" + classlabel
+    photos_dir = "./" + classlabel  #画像が保存されているディレクトリ
     files = glob.glob(photos_dir + "/*.jpg")
     for i, file in enumerate(files):
         if i >= 30: break

@@ -16,7 +16,7 @@ savedir = "./" + animalname  ##保存フォルダを指定
 flickr = FlickrAPI(key, secret, format='parsed-json')
 result = flickr.photos.search(
     text = animalname,
-    per_page = 30,   ##取得するデータ件数
+    per_page = 50,   ##取得するデータ件数
     media = 'photos',  ##写真を検索
     sort = 'relevance',  ##関連順にソート
     safe_search = 1,  ##安全なコンテンツのみ
@@ -27,8 +27,8 @@ photos = result['photos']  ##検索結果の写真情報
 # pprint(photos)  ##検索結果の写真情報を表示
 
 for i, photo in enumerate(photos['photo']):
-    url_q = photo['url_q']  ##写真のURLを取得
-    filepath = savedir + '/' + photo['id'] + '.jpg'   ##ファイル名をidに設定
-    if os.path.exists(filepath): continue  ##すでにファイルが存在する場合はスキップ
-    urlretrieve(url_q, filepath)    ##写真をダウンロード
-    time.sleep(wait_time)   ##1秒間待機
+    url_q = photo['url_q']
+    filepath = savedir + '/' + photo['id'] + '.jpg'
+    if os.path.exists(filepath): continue  ##ファイルが存在する場合はスキップ
+    urlretrieve(url_q, filepath)  ##url_qの画像をfilepathに保存
+    time.sleep(wait_time)
