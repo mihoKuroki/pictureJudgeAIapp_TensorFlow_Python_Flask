@@ -186,6 +186,8 @@ ValueError: setting an array element with a sequence. The requested array has an
 Requirement already satisfied: Keras in c:\users\miho0\anaconda3\envs\tf2\lib\site-packages (2.10.0)
 -------------------------------------------------------------------
 
+###推定するプログラム
+python predict.py pic01.jpg
 
 
 
