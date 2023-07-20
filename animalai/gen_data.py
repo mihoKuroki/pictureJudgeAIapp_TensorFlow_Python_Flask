@@ -1,8 +1,9 @@
 #画像データをNumPy配列に変換する
 from PIL import Image
-import os, glob
+import os,glob
 import numpy as np
 from sklearn import model_selection
+from pprint import pprint
 
 classes = ["monkey", "boar", "crow"]
 num_classes = len(classes)
@@ -24,10 +25,11 @@ for index, classlabel in enumerate(classes):
         X.append(data)  #asarrayでNumPy配列に変換
         Y.append(index)  #ラベルを追加
         
-X = np.array(X)
-Y = np.array(Y)
-
+X = np.array(X, dtype=np.float32)  #NumPy配列に変換
+Y = np.array(Y, dtype=np.int32)
+# pprint(Y)
 #学習データとテストデータを分ける
 X_train, X_test, y_train, y_test = model_selection.train_test_split(X, Y)
 xy = (X_train, X_test, y_train, y_test)
+# pprint(xy)
 np.save("./animal.npy", xy)  #NumPy配列をバイナリファイルに保存
